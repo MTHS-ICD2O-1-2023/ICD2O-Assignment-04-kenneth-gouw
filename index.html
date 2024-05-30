@@ -1,9 +1,107 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Title</title>
-  </head>
-  <body>
-    <p>Paragraph</p>
-  </body>
+<head>
+  <meta charset="utf-8" />
+  <meta name="description" content="Chessy Quesadillas" />
+  <meta name="keywords" content="mths, ics2o" />
+  <meta name="author" content="Kenneth" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="./css/style.css" />
+  <link rel="stylesheet" href="./css/getmdl-select.min.css" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+  <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.yellow-green.min.css" />
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon (1).png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32 (1).png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16 (1).png" />
+  <link rel="manifest" href="./site.webmanifest" />
+  <!-- This is the title of the webpage -->
+  <title>Quesadillas Order</title>
+</head>
+<body>
+  <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+  <script src="./js/script.js"></script>
+  <script src="./js/getmdl-select.js"></script>
+  <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+    <header class="mdl-layout__header">
+      <div class="mdl-layout__header-row">
+        <!-- This is the header of the webpage -->
+        <span class="mdl-layout-title">
+          <h3>Welcome to Chessy Quesadillas</h3>
+        </span>
+      </div>
+    </header>
+    <main class="mdl-layout__content">
+      <div id="image">
+        <img class="right-image" src="./images/beef-quesadillas-main1-2.webp" alt="Quesadillas" width="600" height="315" />
+      </div>
+      <div class="page-content">
+        <h3>Please enter your order:
+        </h3>
+        <h4>What type of meat would you like in your Quesadillas?</h4>
+        <!-- Simple Select with radio button -->
+        <form action="#">
+          <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="option-1">
+            <input type="radio" id="option-1" class="mdl-radio__button" name="meat-options" value="1" checked>
+            <span class="mdl-radio__label">Beef</span>
+          </label>
+          <br />
+          <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="option-2">
+            <input type="radio" id="option-2" class="mdl-radio__button" name="meat-options" value="2">
+            <span class="mdl-radio__label">Oxtail</span>
+          </label>
+          <br />
+          <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="option-3">
+            <input type="radio" id="option-3" class="mdl-radio__button" name="meat-options" value="3">
+            <span class="mdl-radio__label">Chicken</span>
+          </label>
+          <br />
+          <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="option-4">
+            <input type="radio" id="option-4" class="mdl-radio__button" name="meat-options" value="4">
+            <span class="mdl-radio__label">Pork</span>
+          </label>
+          <br />
+          <h4>What size of Quesadilla do you want?</h4>
+          <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="option-5">
+            <input type="radio" id="option-5" class="mdl-radio__button" name="size-options" value="1" checked>
+            <span class="mdl-radio__label">Small</span>
+          </label>
+          <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="option-6">
+            <input type="radio" id="option-6" class="mdl-radio__button" name="size-options" value="2">
+            <span class="mdl-radio__label">Medium</span>
+          </label>
+          <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="option-6">
+            <input type="radio" id="option-6" class="mdl-radio__button" name="size-options" value="2">
+            <span class="mdl-radio__label">Large</span>
+          </label>
+          <br />
+          <br />
+          <h4>What topics would you like in your Quesadillas?</h4>
+          <!-- Simple Select with radio button -->
+          <form action="#">
+            <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="option-1">
+              <input type="radio" id="option-1" class="mdl-radio__button" name="topping-options" value="1" checked>
+              <span class="mdl-radio__label">Salsa</span>
+            </label>
+            <br />
+            <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="option-2">
+              <input type="radio" id="option-2" class="mdl-radio__button" name="topping-options" value="2">
+              <span class="mdl-radio__label">Pico de Gallo</span>
+            </label>
+            <br />
+          <!-- Colored raised button -->
+          </br>
+        </br>
+          <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored"
+            onclick="myButtonClicked()">
+            Order
+          </button>
+          <p></p>
+          <div id="size-container"></div>
+          <div id="topping-container"></div>
+          <div id="meat-container"></div>
+          <div id="total"></div>
+        </form>
+    </main>
+  </div>
+</body>
 </html>
