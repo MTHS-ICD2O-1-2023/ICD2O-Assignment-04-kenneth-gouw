@@ -6,11 +6,14 @@
 
 "use strict"
 
-function myButtonClicked() {
-
+function calculate() {
   let size = document.getElementById("size-container").value
   let topping = document.getElementById("topping-container").value
   let meat = document.getElementById("meat-container").value
+
+  console.log("Size", size)
+  console.log("Topping", topping)
+  console.log("Meat", meat)
 
   let sizePrice = 0
   let toppingPrice = 0
@@ -22,56 +25,28 @@ function myButtonClicked() {
     sizePrice = 10.0
   } else if (size == "Large"){
     sizePrice = 15.0
+  } 
+
+  if (topping == "Salsa") {
+    toppingPrice = 1.0
+  } else if (topping == "Pico de Gallo"){
+    toppingPrice = 2.0
   }
 
-  if (topping == "Small") {
-    sizePrice = 5.0
-  }else if (size == "Medium"){
-    sizePrice = 10.0
-  } else if (size == "Large"){
-    sizePrice = 15.0
+  if (meat == "Beef") {
+    meatPrice = 5.0
+  } else if (meat == "Oxtail"){
+    meatPrice = 6.0
+  } else if (meat == "Chicken"){
+    meatPrice = 7.0
+  } else if (meat == "Pork"){
+    meatPrice = 4.0
   }
 
+  let totalPrice = sizePrice + meatPrice + toppingPrice
 
-  // Get the selected values for meat and length options
-  const Meat = parseInt(
-    document.querySelector('input[name="meat-options"]:checked').value
-  )
-  const Size = parseInt(
-    document.querySelector('input[name="size-options"]:checked').value
-  )
-  const Topping = parseInt(
-    document.querySelector('input[name="topping-options"]:checked').value
-  )
-  // Process
-  if (Size === 1) {
-    costSize = COST_SMALL
-  } else if (Size === 2) {
-    costSize = COST_MEDIUM
-  }
-    else if (Size === 3) {
-    costSize = COST_LARGE
-  }
+  console.log("Total Price: ", totalPrice)
 
-  if (Meat === 1) {
-    cost = COST_BEEF
-  } else if (Meat === 2) {
-    cost = COST_PORK
-  } else if (Meat === 3) {
-    cost = COST_CHICKEN
-  } else if (Meat === 4) {
-    cost = COST_OXTAIL
-  }
-
-  if (Topping === 1) {
-    cost = COST_SALSA
-  } else if (Topping === 2) {
-    cost = COST_PICO_DE_GALLO
-  }
-
-  answer = (Size + Topping + Meat) * TAX
-
-  // Output
-  document.getElementById("answer").innerHTML =
-    "Your total comes to $" + answer + ". Thank you for eating at Chessy Quesadillas!"
+  document.getElementById("total").innerHTML =
+    "Your total will be $" + totalPrice + "! Have a great time"
 }
